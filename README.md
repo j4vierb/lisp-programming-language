@@ -1,8 +1,10 @@
 # Build your own LISP
 
-In this repository you will find my own implementation of the following tutorial. 
+## Introduction
 
-# Commands 
+In this repository you'll find the code of **build your own Lisp**. 
+
+## Commands 
 
 To run it just copy and paste the following command in your terminal.
 
@@ -10,8 +12,7 @@ To run it just copy and paste the following command in your terminal.
 cc -std=c99 -Wall <file_name> mpc.c -ledit -lm -o ./build/<file_name>
 ```
 
-# Reference
+## Reference
 
 1. [Build your own Lisp](https://www.buildyourownlisp.com/)
 2. [C documentation](https://en.cppreference.com/w/c)
-

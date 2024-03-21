@@ -99,5 +99,20 @@ Are a way of writing grammars for small sections of text such as words or number
 
 - Change the grammar to make the operators written conventionally, between two expressions.
 
+```c
+  mpc_parser_t* Number = mpc_new("number");
+  mpc_parser_t* Operator = mpc_new("operator");
+  mpc_parser_t* Expr = mpc_new("expr");
+  mpc_parser_t* Lispy = mpc_new("lispy");
 
+  /* Allow new operators %, mul, add, sub, div */
+  mpca_lang(MPCA_LANG_DEFAULT,
+  "                                                           \
+    number   : /-?([0-9]+.[0-9]+|[0-9]+)/ ;                   \
+    operator : '+' | '-' | '*' | '/' | ;                      \
+    expr     : <number> | '(' <expr> <operator> <expr> ')' ;  \
+    lispy    : /^/ <expr> <operator> <expr> /$/ ;             \
+  ",
+  Number, Operator, Expr, Lispy);
+```
 

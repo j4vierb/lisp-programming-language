@@ -46,6 +46,31 @@ CMD> + 1 ( - 2 3 ( * 2 3 ) )
 1. If a node is tagged with number it is always a number, has no children, and we can convert the contents to an integer. 
 2. If a node is tagged with expr and is not a numbr, we need to look at its second child, the first and last value are '(' and ')' always. 
 
+## Bonus Marks
+
+- Write a recursive function to compute the number of leaves of a tree.
+- Write a recursive function to compute the number of branches of a tree.
+- Write a recursive function to compute the most number of children spanning from one branch of a tree.
+- How would you use strstr to see if a node was tagged as an expr?
+
+`if(strstr(t->tag, "expr"))`, if `"expr"` is not a substring of `t->tag` it will be 0. 
+
+- How would you use strcmp to see if a node had the contents '(' or ')'?
+
+`if(strcmp(t->contents, '(') == 0 || strcmp(t->contents, ')') == 0)`.
+
+- Add the operator %, which returns the remainder of division. For example % 10 6 is 4.
+
+- Add the operator ^, which raises one number to another. For example ^ 4 2 is 16.
+
+Change the grammar to add the new operator and add this new operator to `eval_op`.
+
+- Add the function min, which returns the smallest number. For example min 1 5 3 is 1.
+
+- Add the function max, which returns the biggest number. For example max 1 5 3 is 5.
+
+- Change the minus operator - so that when it receives one argument it negates it.
+
 ## Resources
 
 1. [Abstract syntax tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
